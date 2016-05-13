@@ -22,7 +22,36 @@
             <ul class="primary-nav">
                 <li><a href="">home</a></li>
                 <li><a href="">premium astrology</a></li>
-                <li><a href="">free astrology</a></li>
+                <li>
+                    <a href="">free astrology</a>
+                    <ul class="drop1">
+                        <li><a href="#">Vedic Horoscope</a></li>
+                        <li><a href="#">Daily Astrology</a>
+                            <ul>
+                                <li><a href="#">Daily Rashifala</a></li>
+                                <li><a href="#">Daily Numerology Horoscope</a></li>
+                                <li><a href="#">Daily Ephemeris</a></li>
+                                <li><a href="#">Today's Panchang</a></li>
+                                <li><a href="#">Financial Analysis</a></li>
+                                <li><a href="#">Travel Analysis</a></li>
+                                <li><a href="#">Chogadia</a></li>
+                                <li><a href="#">Horas</a></li>
+                                <li><a href="#">Sunrise & Sunset</a></li>
+                                <li><a href="#">Rahukaal</a></li>
+                                <li><a href="#">Monthly Horoscope</a></li>
+                                <li><a href="#">Yearly Horoscope - 2012</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Lal Kitab Astrology</a></li>
+                        <li><a href="#">Compatibility</a></li>
+                        <li><a href="#">Numerology</a></li>
+                        <li><a href="#">Yearly Horoscope</a></li>
+                        <li><a href="#">Prashna Astrology</a></li>
+                        <li><a href="#">Hindu names & Meanings</a></li>
+                        <li><a href="#">Krishnamurthy Astrology</a></li>
+                        <li><a href="#">Color Therapy</a></li>
+                    </ul>
+                </li>
                 <li><a href="">mobile</a></li>
                 <li><a href="">articles</a></li>
                 <li><a href="">help</a></li>
@@ -809,18 +838,19 @@
                         <form action="" class="form">
                             <div class="form__header">Get Free Vedic Horoscope</div>
                             <div class="form-content">
-                                <div class="form__input form__input--name"><input type="text" placeholder="Name"></div>
+                                <div class="form__input form__input--name"><input type="text" placeholder="Name" pattern=".{3,}" required title="3 characters minimum"></div>
                                 <div class="form__checkbox">
                                     <span>Gender:</span>
                                     <input type="radio" name="gender" id="check-male" name="">
-                                    <label for="check-male"></label>
+                                    <label for="check-male">Male</label>
                                     <input type="radio" name="gender" id="check-female" name="">
-                                    <label for="check-female"></label>
+                                    <label for="check-female">Female</label>
                                 </div>
                                 <div class="form__datepicker">
                                     <p>Birth Date:</p>
                                     <div class="select-wrap">
                                         <select name="day" id="day" onchange="" size="1">
+                                            <option value="Day">Day</option>
                                             <option value="01">01</option>
                                             <option value="02">02</option>
                                             <option value="03">03</option>
@@ -856,6 +886,7 @@
                                     </div>
                                     <div class="select-wrap">
                                         <select name="month" id="month" onchange="" size="1">
+                                            <option value="Month">Month</option>
                                             <option value="01">January</option>
                                             <option value="02">February</option>
                                             <option value="03">March</option>
@@ -872,6 +903,7 @@
                                     </div>
                                     <div class="select-wrap">
                                         <select name="year" id="year" onchange="" size="1">
+                                            <option value="Year">Year</option>
                                             <option value="2016">2016</option>
                                             <option value="2015">2015</option>
                                             <option value="2014">2014</option>
@@ -883,11 +915,18 @@
                                         </select>
                                     </div>
                                 </div>
-                                <div class="form__input form__input--mail"><input type="text" placeholder="E-mail"></div>
+                                <div class="form__input form__input--mail"><input type="text" placeholder="E-mail" required></div>
                                 <p>I have read & agree to the <a href="">Terms of use</a></p>
-                                <a href="" class="btn btn--green">next</a>
+                                <div class="button-wrap">
+                                    <input type="submit" class="btn btn--green" value="next">
+                                </div>
                             </div>
                         </form>
+                    </div>
+                    <div class="widget thumbnails-widget">
+                        <div class="thumbnails-widget-item"></div>
+                        <div class="thumbnails-widget-item"></div>
+                        <div class="thumbnails-widget-item"></div>
                     </div>
                 </div>
             </div>

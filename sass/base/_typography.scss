@@ -1,0 +1,30 @@
+// =============================================================================
+// Typography 
+// =============================================================================
+
+@font-face {
+    font-family: 'Myriad Pro Regular';
+    src: url('../fonts/Myriad Pro Regular/MYRIADPROREGULAR.eot');
+    src: local('../fonts/Myriad Pro Regular/MYRIADPROREGULAR'), 
+    url('../fonts/Myriad Pro Regular/MYRIADPROREGULAR.woff') format('woff'), 
+    url('../fonts/Myriad Pro Regular/MYRIADPROREGULAR.ttf') format('truetype');
+}
+
+h2 {
+    font-family: $ptsans;
+    font-size: px2em(24);
+    font-weight: 700;
+}
+
+h3 {
+    font-size: px2em(16);
+    font-weight: 700;
+}
+
+h4 {
+    color: #730808;
+    font-family: $ptsans;
+    font-size: px2em(18);
+    font-weight: 700;
+}
+

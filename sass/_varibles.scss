@@ -1,0 +1,27 @@
+$brown: #9e4310;
+$brown-hover: #ac501c;
+$browser-context: 16;
+
+//fonts 
+$ptsans: 'PT Sans', sans-serif;
+
+//Functions 
+@function px2em($pixels, $context: $browser-context) {
+  @return #{$pixels/$context}em;
+}
+
+@mixin clearfix() {
+  &:before,
+  &:after {
+    content: " "; 
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+// Sprites
+$tabs-sprite-dimensions: true;
+@import "tabs/*.png";
+@include all-tabs-sprites;

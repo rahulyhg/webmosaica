@@ -1,0 +1,16 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: $ptsans;
+    font-size: 16px;
+}
+
+.section-header {
+    margin: 0;
+    padding-bottom: 9px;
+    text-transform: uppercase;
+    color: #660000;
+    border-bottom: 1px solid #dcdcdc;
+}
