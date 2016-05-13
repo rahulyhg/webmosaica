@@ -1,16 +1,12 @@
 
 $brown: #9e4310;
 $brown-hover: #ac501c;
-
-
 $browser-context: 16;
 
 //fonts 
 $ptsans: 'PT Sans', sans-serif;
 
-
 //Functions 
-
 @function px2em($pixels, $context: $browser-context) {
   @return #{$pixels/$context}em;
 }
@@ -26,13 +22,19 @@ $ptsans: 'PT Sans', sans-serif;
   }
 }
 
+// Sprites
+$tabs-sprite-dimensions: true;
+@import "tabs/*.png";
+@include all-tabs-sprites;
+
+
 * {
     box-sizing: border-box;
 }
 
 body {
-    font-size: 16px;
     font-family: $ptsans;
+    font-size: 16px;
 }
 
 //Typography 
@@ -43,11 +45,18 @@ h2 {
     font-weight: 700;
     &.section-header {
         margin: 0;
-        color: #660000;
         padding-bottom: 9px;
-        border-bottom: 1px solid #dcdcdc;
         text-transform: uppercase;
+        color: #660000;
+        border-bottom: 1px solid #dcdcdc;
     }
+}
+
+h4 {
+    color: #730808;
+    font-family: $ptsans;
+    font-size: px2em(18);
+    font-weight: 700;
 }
 
 .header {
@@ -66,20 +75,21 @@ h2 {
 
 .primary-nav {
     float: left;
-    padding: 0;
     margin: 0;
+    padding: 0;
     list-style: none;
+
     @include clearfix();
     li {
         float: left;
         a {
-            font-size: px2em(16);
             display: block;
-            color: #fff;
-            text-transform: uppercase;
-            text-decoration: none;
             padding: 13px 21px;
             transition: background-color 0.4s ease;
+            text-decoration: none;
+            text-transform: uppercase;
+            color: #fff;
+            font-size: px2em(16);
             &:hover {
                 background-color: #ac501c;
             }
@@ -88,8 +98,9 @@ h2 {
 }
 
 .secondary-nav {
-    @extend .primary-nav;
     float: right;
+
+    @extend .primary-nav;
     li {
         a {
             background-color: #913b0b;
@@ -108,23 +119,23 @@ h2 {
 }
 
 .content-left {
-
 }
 
 //Reports
 
 .reports-block {
-    padding-right: 9px;
     margin-bottom: 51px;
+    padding-right: 9px;
     .reports-content {
         padding-top: 20px;
     }
 }
 
 .reports-list {
-    list-style: none;
-    padding: 0;
     margin: 0 -4px;
+    padding: 0;
+    list-style: none;
+
     @include clearfix();
 }
 
@@ -132,8 +143,8 @@ h2 {
     float: left;
     width: 202px;
     margin: 4.5px 4px;
-    border: 2px solid #ffe9cf;
     transition: background-color 0.4s linear;
+    border: 2px solid #ffe9cf;
     &:hover {
         background-color: #ffe9cf;
     }
@@ -141,6 +152,7 @@ h2 {
         display: block;
         padding: 6px 4px 5px;
         text-decoration: none;
+
         @include clearfix();
     }
     &__image {
@@ -156,16 +168,15 @@ h2 {
         margin-left: 62px;
         color: #171717;
         p {
+            margin-bottom: 0;
             font-size: px2em(14);
             line-height: (15/14);
-            margin-bottom: 0;
             &.title {
-                font-size: px2em(15);
                 color: #550101;
+                font-size: px2em(15);
             }
         }
     }
-
 }
 
 //Lucky
@@ -190,9 +201,9 @@ h2 {
         text-align: center;
         p {
             margin-top: 4px;
-            color: #2d2d2d;
             margin-bottom: 0;
             text-transform: uppercase;
+            color: #2d2d2d;
             font-size: px2em(16);
         }
     }
@@ -201,20 +212,20 @@ h2 {
 .circle {
     position: relative;
     display: inline-block;
+    overflow: hidden;
     width: 98px;
     height: 98px;
     border-radius: 50%;
-    background-position: center;
     background-repeat: no-repeat;
-    overflow: hidden;
+    background-position: center;
     &:after {
-        content: "";
         position: absolute;
         top: 0;
         right: 0;
         bottom: 0;
         width: 50%;
         height: 100%;
+        content: "";
         transition: width .5s cubic-bezier(.06,.3,.94,.11);
     }
     &:hover {
@@ -224,10 +235,11 @@ h2 {
     }
     & > img {
         position: absolute;
+        z-index: 2;
         top: 50%;
         left: 50px;
-        transform: translate(-50%, -50%);
-        z-index: 2;
+        -webkit-transform: translate(-50%, -50%);
+                transform: translate(-50%, -50%);
     }
     &--brown {
         background-color: $brown;
@@ -246,35 +258,285 @@ h2 {
 
 //predictions
 
+.predictions-content {
+    padding-top: 30px;
+}
 
 .prediction-tab-controls {
     li {
-        display: inline-block;
+        float: left;
+        width: (100%/12);
         text-align: center;
         p {
-            font-size: px2em(13);
-            color: #757575;
             transition: color 0.3s ease;
+            color: #757575;
+            font-size: px2em(13);
         }
+        &.active,
         &:hover {
             p {
                 color: #b15521;
             }
             .prediction-circle {
                 background-color: #b15521;
+                &--gemini {
+                    &:before {
+                        @include tabs-sprite(predictions1);
+                    }
+                }
+                &--leo {
+                    &:before {
+                        @include tabs-sprite(predictions2);
+                    }
+                }
+                &--virgo {
+                    &:before {
+                        @include tabs-sprite(predictions3);
+                    }
+                }
+                &--libra {
+                    &:before {
+                        @include tabs-sprite(predictions4);
+                    }
+                }
+                &--scorpio {
+                    &:before {
+                        @include tabs-sprite(predictions5);
+                    }
+                }
+                &--sagittarius {
+                    &:before {
+                        @include tabs-sprite(predictions6);
+                    }
+                }
+                &--sag {
+                    &:before {
+                        @include tabs-sprite(predictions7);
+                    }
+                }
+                &--aquarius {
+                    &:before {
+                        @include tabs-sprite(predictions8);
+                    }
+                }
+                &--capricorn {
+                    &:before {
+                        @include tabs-sprite(predictions9);
+                    }
+                }
+                &--pisces {
+                    &:before {
+                        @include tabs-sprite(predictions10);
+                    }
+                }
+                &--taurus {
+                    &:before {
+                        @include tabs-sprite(predictions11);
+                    }
+                }
+                &--cancer {
+                    &:before {
+                        @include tabs-sprite(predictions12);
+                    }
+                }
             }
         }
     }
-
 }
 
 .prediction-circle {
+    position: relative;
+    display: inline-block;
     width: 60px;
     height: 60px;
+    transition: background-color 0.3s ease;
     border-radius: 50%;
     background-color: none;
-    background-position: center;
     background-repeat: no-repeat;
-    transition: all 0.3s ease;
-    
+    background-position: center;
+    &:before {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        content: "";
+        -webkit-transform: translate(-50%, -50%);
+                transform: translate(-50%, -50%);
+    }
+    &--gemini {
+        &:before {
+            @include tabs-sprite(predictions1b);
+        }
+    }
+    &--leo {
+        &:before {
+            @include tabs-sprite(predictions2b);
+        }
+    }
+    &--virgo {
+        &:before {
+            @include tabs-sprite(predictions3b);
+        }
+    }
+    &--libra {
+        &:before {
+            @include tabs-sprite(predictions4b);
+        }
+    }
+    &--scorpio {
+        &:before {
+            @include tabs-sprite(predictions5b);
+        }
+    }
+    &--sagittarius {
+        &:before {
+            @include tabs-sprite(predictions6b);
+        }
+    }
+    &--sag {
+        &:before {
+            @include tabs-sprite(predictions7b);
+        }
+    }
+    &--aquarius {
+        &:before {
+            @include tabs-sprite(predictions8b);
+        }
+    }
+    &--capricorn {
+        &:before {
+            @include tabs-sprite(predictions9b);
+        }
+    }
+    &--pisces {
+        &:before {
+            @include tabs-sprite(predictions10b);
+        }
+    }
+    &--taurus {
+        &:before {
+            @include tabs-sprite(predictions11b);
+        }
+    }
+    &--cancer {
+        &:before {
+            @include tabs-sprite(predictions12b);
+        }
+    }
+}
+
+//bottom nav
+
+.bottom-nav {
+    padding: 50px 0 40px;
+    border-top: 1px solid #dcdcdc;
+    background-image: url("../images/bnav-bg.jpg");
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    background-size: cover;
+}
+
+.navigation-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    column-gap: 13px;
+    -webkit-column-count: 5;
+       -moz-column-count: 5;
+            column-count: 5;
+}
+
+.navigation-list-item {
+    h4 {
+        margin: 0 0 10px;
+        text-transform: uppercase;
+    }
+    ul {
+        margin-bottom: 30px;
+        padding: 0;
+        list-style: none;
+        li {
+            margin-left: 18px;
+            list-style-image: url('../images/list-bullet.png');
+            & + li {
+                margin-top: 15px;
+            }
+            a {
+                color: #252424;
+                font-size: px2em(15);
+                &:hover {
+                    color: #518600;
+                    font-weight: 700;
+                }
+            }
+        }
+    }
+}
+
+//footer
+
+.footer {
+    padding: 32px 0;
+    background-color: #730808;
+}
+
+.footer-copyright {
+    margin-top: 21px;
+    p {
+        margin-bottom: 13px;
+        color: #fff;
+        font-size: px2em(15);
+        &:last-child {
+            margin-bottom: 0;
+            line-height: (24/15);
+        }
+    }
+}
+
+.footer-navigation {
+    margin-top: 21px;
+    text-align: center;
+    ul {
+        display: inline-block;
+        margin: 0;
+        padding: 7px 0;
+        border-top: 1px solid #660404;
+        border-bottom: 1px solid #660404;
+        list-style: none;
+        @include clearfix();
+        & + ul {
+            margin-top: 15px;
+        }
+        li {
+            float: left;
+            a {
+                position: relative;
+                display: block;
+                padding: 6px 15px;
+                color: #fff;
+                font-size: px2em(15);
+                text-align: center;
+                transition: all .4s ease;
+                &:hover {
+                    color: #ffe790;
+                    font-weight: 700;
+                    text-decoration: none;
+                }
+                &:after {
+                    position: absolute;
+                    content: "";
+                    width: 1px;
+                    height: 100%;
+                    background-color: #660404;
+                    right: 0;
+                    top: 0;
+                }
+                &:last-child {
+                    &:after {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
 }
