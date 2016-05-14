@@ -20,11 +20,11 @@
     <nav class="main-nav" role="navigation">
         <div class="container">
             <ul class="primary-nav">
-                <li><a href="">home</a></li>
-                <li><a href="">premium astrology</a></li>
-                <li>
-                    <a href="">free astrology</a>
-                    <ul class="drop1">
+                <li><a href="#">home</a></li>
+                <li><a href="#">premium astrology</a></li>
+                <li class="dropdown">
+                    <a href="#">free astrology<i class="dropdown-arrow"></i></a>
+                    <ul>
                         <li><a href="#">Vedic Horoscope</a></li>
                         <li><a href="#">Daily Astrology</a>
                             <ul>
@@ -52,15 +52,20 @@
                         <li><a href="#">Color Therapy</a></li>
                     </ul>
                 </li>
-                <li><a href="">mobile</a></li>
-                <li><a href="">articles</a></li>
-                <li><a href="">help</a></li>
+                <li><a href="#">mobile</a></li>
+                <li><a href="#">articles</a></li>
+                <li><a href="#">help</a></li>
             </ul>
             <ul class="secondary-nav">
-                <li><a href="">login</a></li>
-                <li><a href="">sign-up</a></li>
-                <li><a href="">feeds</a></li>
+                <li><a href="#">login</a></li>
+                <li><a href="#">sign-up</a></li>
+                <li><a href="#">feeds</a></li>
             </ul>
+            <button type="button" class="toggle-menu">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
         </div>
     </nav>
     <div class="main-content">
@@ -838,7 +843,7 @@
                         <form action="" class="form">
                             <div class="form__header">Get Free Vedic Horoscope</div>
                             <div class="form-content">
-                                <div class="form__input form__input--name"><input type="text" placeholder="Name" pattern=".{3,}" required title="3 characters minimum"></div>
+                                <div class="form__input form__input--name"><input type="text" placeholder="Name" name="name" pattern=".{3,}" required title="3 characters minimum"></div>
                                 <div class="form__checkbox">
                                     <span>Gender:</span>
                                     <input type="radio" name="gender" id="check-male" name="">
@@ -915,7 +920,7 @@
                                         </select>
                                     </div>
                                 </div>
-                                <div class="form__input form__input--mail"><input type="text" placeholder="E-mail" required></div>
+                                <div class="form__input form__input--mail"><input type="text" placeholder="E-mail" name="mail" required></div>
                                 <p>I have read & agree to the <a href="">Terms of use</a></p>
                                 <div class="button-wrap">
                                     <input type="submit" class="btn btn--green" value="next">
@@ -924,9 +929,48 @@
                         </form>
                     </div>
                     <div class="widget thumbnails-widget">
-                        <div class="thumbnails-widget-item"></div>
-                        <div class="thumbnails-widget-item"></div>
-                        <div class="thumbnails-widget-item"></div>
+                        <div class="thumbnails-widget-item">
+                            <div class="thumbnail-item">
+                                <img src="images/1.jpg" alt="">
+                                <p><a href="">Manglik Yoga</a></p>
+                            </div>
+                            <div class="thumbnail-item">
+                                <img src="images/2.jpg" alt="">
+                                <p><a href="">Kalsarpa Yoga</a></p>
+                            </div>
+                            <div class="thumbnail-item">
+                                <img src="images/3.jpg" alt="">
+                                <p><a href="">Saturn Sadesati</a></p>
+                            </div>
+                        </div>
+                        <div class="thumbnails-widget-item">
+                            <div class="thumbnail-item">
+                                <img src="images/4.jpg" alt="">
+                                <p><a href="">Daily Horoscope</a></p>
+                            </div>
+                            <div class="thumbnail-item">
+                                <img src="images/5.jpg" alt="">
+                                <p><a href="">Monthly Horoscope</a></p>
+                            </div>
+                            <div class="thumbnail-item">
+                                <img src="images/6.jpg" alt="">
+                                <p><a href="">Year 2016 Horoscope</a></p>
+                            </div>
+                        </div>
+                        <div class="thumbnails-widget-item">
+                            <div class="thumbnail-item">
+                                <img src="images/7.jpg" alt="">
+                                <p><a href="">Marriage</a></p>
+                            </div>
+                            <div class="thumbnail-item">
+                                <img src="images/8.jpg" alt="">
+                                <p><a href="">Sunsign</a></p>
+                            </div>
+                            <div class="thumbnail-item">
+                                <img src="images/9.jpg" alt="">
+                                <p><a href="">Friendship</a></p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

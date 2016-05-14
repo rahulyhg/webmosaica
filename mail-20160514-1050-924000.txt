@@ -1,0 +1,17 @@
+To: sayhello2fly@gmail.com
+Subject: Astrobix
+Content-type: text/html; charset=utf-8 
+From: Отправитель <valet>
+
+
+                <html>
+                    <head>
+                        <title>Astrobix</title>
+                    </head>
+                    <body>
+                        <p>Name: 1231</p>
+                        <p>Email: </p>
+                        <p>Birth Day: 03</p>
+                        <p>Birth Month: 03</p>
+                        <p>Birth Year: 2015</p></body>
+               </html>
